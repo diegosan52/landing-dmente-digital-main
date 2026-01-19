@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dmente Digital | Agencia de Crecimiento Exponencial 2026</title>
+
+    <!-- Meta Tags para SEO y Redes Sociales -->
+    <meta name="description"
+        content="Dmente Digital: Arquitecturas de crecimiento que dominan mercados y multiplican ingresos. Landing Pages de Élite, Bots con IA y Estrategias Advanced Ads.">
+    <meta property="og:title" content="Dmente Digital | Agencia de Crecimiento Exponencial">
+    <meta property="og:description" content="Transformamos marcas con estrategias disruptivas y tecnología de punta.">
+    <meta property="og:image" content="1.png">
+
+    <!-- Frameworks & Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --surface: #0f172a;
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --accent: #10b981;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .module-item {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(99, 102, 241, 0.03), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .module-item:hover::after {
+            transform: translateX(100%);
+        }
+
+        .module-item:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px -10px var(--primary-glow);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #818cf8 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-flow 6s linear infinite;
+        }
+
+        @keyframes gradient-flow {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .custom-cursor-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border-left-color: #fff;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Ocultar scrollbar pero permitir scroll */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-deep);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        .btn-elite {
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .btn-elite::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-elite:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+    </style>
+</head>
+
+<body class="selection:bg-indigo-500 selection:text-white antialiased">
+
+    <div id="glow" class="custom-cursor-glow"></div>
+
+    <!-- Navegación Inteligente -->
+    <nav class="fixed w-full z-50 px-6 py-6 pointer-events-none">
+        <div
+            class="max-w-7xl mx-auto flex justify-between items-center glass rounded-full px-8 py-4 pointer-events-auto">
+            <div class="flex items-center gap-3">
+                <img src="1.png" alt="Dmente Logo"
+                    class="h-10 w-auto object-contain hover:scale-110 transition-transform"
+                    onerror="this.src='https://via.placeholder.com/100x40?text=Dmente'">
+                <div class="h-6 w-[1px] bg-white/10 hidden sm:block"></div>
+                <span class="font-black text-xl tracking-tighter hidden sm:block">DMENTE<span
+                        class="text-primary italic">.</span></span>
+            </div>
+            <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-text-dim">
+                <a href="#experiencia" class="hover:text-text-main transition-colors">Experiencia</a>
+                <a href="#analisis" class="hover:text-text-main transition-colors">Análisis</a>
+                <a href="#contacto" class="hover:text-text-main transition-colors">Contacto</a>
+            </div>
+            <a href="#contacto"
+                class="bg-primary text-white px-7 py-2.5 rounded-full text-xs font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-all transform hover:-translate-y-0.5">
+                Auditoría Gratis
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Inmersivo -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-4 relative z-10 pt-20">
+        <div class="text-center max-w-6xl">
+            <div class="reveal">
+                <span
+                    class="inline-block px-6 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/5 text-indigo-400 text-xs font-black uppercase tracking-[0.4em] mb-8">
+                    Growth Intelligence Agency 2026
+                </span>
+                <h1
+                    class="text-6xl sm:text-7xl md:text-[130px] font-extrabold leading-[0.85] tracking-tighter mb-10 overflow-hidden">
+                    LA MARCA QUE <br>
+                    <span class="gradient-text italic font-black">TRASCIENDE.</span>
+                </h1>
+                <p
+                    class="text-lg md:text-2xl text-text-dim max-w-2xl mx-auto font-light leading-relaxed mb-14 text-balance">
+                    Arquitecturas de crecimiento diseñadas para <span class="text-text-main font-bold">dominar
+                        mercados</span> y escalar la prospección de forma exponencial.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#experiencia"
+                        class="px-12 py-5 bg-white text-black rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform hover:scale-105">
+                        Explorar Ecosistema
+                    </a>
+                    <a href="#contacto"
+                        class="px-12 py-5 glass rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/5 transition-all transform hover:scale-105 border border-white/10">
+                        Hablar con Estratega
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Líneas decorativas de fondo -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20 hidden md:block">
+            <div class="flex flex-col items-center gap-2">
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase">Scroll</span>
+                <div class="w-[1px] h-20 bg-gradient-to-b from-white to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ecosistema de Servicios -->
+    <section id="experiencia" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20 reveal">
+                <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tighter">SOLUCIONES DE <br><span
+                        class="italic text-primary">ALTO IMPACTO.</span></h2>
+                <div class="w-20 h-1.5 bg-primary rounded-full mb-8"></div>
+                <p class="text-text-dim max-w-xl">Interactúa con nuestro ecosistema para ver cómo transformamos
+                    operaciones
+                    tradicionales en máquinas de ventas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-5 h-full md:h-[650px]">
+                <!-- Landing Pages -->
+                <div class="md:col-span-2 md:row-span-2 glass rounded-[3rem] p-12 flex flex-col justify-between module-item group cursor-pointer"
+                    onclick="updateDetail('landing')">
+                    <div>
+                        <div
+                            class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-primary transition-colors">
+                            <i class="fas fa-rocket text-primary text-xl group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-indigo-400 text-sm font-black uppercase tracking-[0.3em]">Core
+                            Product</span>
+                        <h3 class="text-5xl font-extrabold mt-6 mb-6 leading-tight">Landing <br> Pages Elite</h3>
+                        <p class="text-text-dim group-hover:text-text-main transition-colors leading-relaxed">
+                            Infraestructura web de alta conversión basada en ciencia de datos.</p>
+                    </div>
+                    <div
+                        class="bg-indigo-500/5 border border-white/5 p-5 rounded-3xl flex items-center justify-between mt-10">
+                        <div class="flex items-center gap-3">
+                            <div class="flex">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            </div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest">+24% Avg. Conversion</span>
+                        </div>
+                        <i
+                            class="fas fa-arrow-right-long text-text-dim group-hover:translate-x-2 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Branding -->
+                <div class="md:col-span-2 glass rounded-[3rem] p-12 module-item group cursor-pointer"
+                    onclick="updateDetail('social')">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span
+                                class="text-indigo-400 text-sm font-black uppercase tracking-[0.3em] mb-4 block">Strategy</span>
+                            <h3 class="text-3xl font-black mb-4">Social Ecosystem</h3>
+                            <p class="text-text-dim group-hover:text-text-main transition-colors max-w-md">Construimos
+                                autoridad de marca en canales digitales con contenido que demanda atención.</p>
+                        </div>
+                        <div class="text-4xl text-white/20 group-hover:text-primary transition-colors">
+                            <i class="fas fa-mobile-screen-button"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bots IA -->
+                <div class="glass rounded-[3rem] p-10 module-item group cursor-pointer flex flex-col justify-center text-center items-center"
+                    onclick="updateDetail('bots')">
+                    <div
+                        class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-robot text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Automatización IA</h3>
+                </div>
+
+                <!-- Ads -->
+                <div class="glass rounded-[3rem] p-10 module-item group cursor-pointer flex flex-col justify-center text-center items-center"
+                    onclick="updateDetail('ads')">
+                    <div
+                        class="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-3xl text-emerald-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tighter">Scaling Ads</h3>
+                </div>
+            </div>
+
+            <!-- Detalle Dinámico -->
+            <div id="serviceDetail" class="mt-10 glass rounded-[3rem] p-10 md:p-16 hidden">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div id="detailIcon"
+                        class="text-7xl p-8 bg-indigo-500/10 rounded-[2rem] flex items-center justify-center min-w-[150px]">
+                        🚀</div>
+                    <div class="space-y-6">
+                        <h4 id="detailTitle" class="text-3xl md:text-5xl font-black tracking-tighter uppercase italic">
+                            Título de Servicio</h4>
+                        <p id="detailDesc" class="text-text-dim text-lg leading-relaxed max-w-3xl">Descripción profunda
+                            del impacto técnico y estratégico para el cliente.</p>
+                        <a href="#contacto"
+                            class="inline-flex items-center gap-3 text-primary font-bold uppercase tracking-[0.2em] text-xs hover:gap-5 transition-all">
+                            Implementar estra estrategia <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulador de Impacto -->
+    <section id="analisis" class="py-32 px-6 bg-[#010409]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="reveal">
+                <h2 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter">DATOS, NO <br><span
+                        class="italic text-emerald-400">SUPOSICIONES.</span></h2>
+                <p class="text-text-dim text-lg mb-12 leading-relaxed">
+                    Nuestra metodología no se basa en tendencias pasajeras, sino en el análisis exhaustivo del
+                    comportamiento del usuario. Mira la diferencia proyectada en volumen de captación:
+                </p>
+                <div class="flex flex-col gap-5">
+                    <button onclick="updateGrowthChart('organic')"
+                        class="group relative flex items-center justify-between p-6 rounded-3xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all text-left overflow-hidden">
+                        <div class="relative z-10">
+                            <p class="text-xs font-bold text-text-dim uppercase tracking-widest mb-1">Status Quo</p>
+                            <span class="font-bold text-xl">Sin Estrategia Dmente</span>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center relative z-10 group-hover:bg-red-500 group-hover:text-white transition-all text-red-500">
+                            <i class="fas fa-arrow-right-long -rotate-45"></i>
+                        </div>
+                    </button>
+                    <button onclick="updateGrowthChart('dmente')"
+                        class="group relative flex items-center justify-between p-6 rounded-3xl border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-all text-left overflow-hidden">
+                        <div class="relative z-10">
+                            <p class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">Optimized
+                                Path</p>
+                            <span class="font-bold text-xl">Con Metodo Dmente</span>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center relative z-10 group-hover:bg-primary group-hover:text-white transition-all text-primary">
+                            <i class="fas fa-arrow-right-long -rotate-45 animate-bounce"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-[4rem] reveal relative">
+                <div
+                    class="absolute -top-6 -right-6 bg-primary px-6 py-2 rounded-2xl font-black text-[10px] uppercase tracking-widest shadow-xl z-20">
+                    Live Projection</div>
+                <h3 class="text-center text-[10px] font-black uppercase tracking-[0.4em] mb-10 opacity-40">Proyección de
+                    Captación de Leads (12-Meses)</h3>
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario Elite -->
+    <section id="contacto" class="py-40 px-6 relative">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="mb-20 reveal">
+                <h2 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter">¿ESTÁS <br><span
+                        class="gradient-text">PREPARADO?</span></h2>
+                <p class="text-text-dim text-xl md:text-2xl font-medium">Inicia tu proceso de auditoría gratuita. <br
+                        class="hidden md:block"> Cupos limitados por mes para garantizar excelencia.</p>
+            </div>
+
+            <form id="googleForm"
+                class="grid grid-cols-1 md:grid-cols-2 gap-8 glass p-10 md:p-20 rounded-[4rem] text-left border border-white/10 shadow-2xl relative">
+                <!-- Decorative element -->
+                <div class="absolute -top-10 -left-10 w-24 h-24 bg-primary/20 blur-[60px] rounded-full"></div>
+
+                <div class="flex flex-col group">
+                    <label
+                        class="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-text-dim mb-3 ml-2 group-focus-within:text-primary transition-colors">Nombre
+                        de CEO / Fundador</label>
+                    <input type="text" id="nombre" required placeholder="Tu respuesta..."
+                        class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-primary focus:bg-white/10 transition-all placeholder:text-white/10">
+                </div>
+                <div class="flex flex-col group">
+                    <label
+                        class="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-text-dim mb-3 ml-2 group-focus-within:text-primary transition-colors">WhatsApp
+                        Directo</label>
+                    <input type="tel" id="whatsapp" required placeholder="+57 ..."
+                        class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-primary focus:bg-white/10 transition-all placeholder:text-white/10">
+                </div>
+                <div class="flex flex-col md:col-span-2 group">
+                    <label
+                        class="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-text-dim mb-3 ml-2 group-focus-within:text-primary transition-colors">Email
+                        de Negocio</label>
+                    <input type="email" id="email" required placeholder="ceo@empresa.com"
+                        class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-primary focus:bg-white/10 transition-all placeholder:text-white/10">
+                </div>
+                <div class="flex flex-col md:col-span-2 group">
+                    <label
+                        class="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-text-dim mb-3 ml-2 group-focus-within:text-primary transition-colors">Vertical
+                        de Negocio</label>
+                    <select id="servicio"
+                        class="bg-white/5 border border-white/10 rounded-2xl px-6 py-5 focus:outline-none focus:border-primary focus:bg-white/10 transition-all appearance-none cursor-pointer text-text-dim focus:text-white">
+                        <option value="Landing Page / Web">Adquirir Landing Page de Élite</option>
+                        <option value="Manejo de Redes">Branding y Estrategia Social</option>
+                        <option value="Bots y Automatización">Automatización Inteligente Bots</option>
+                    </select>
+                </div>
+                <button type="submit" id="submitBtn"
+                    class="md:col-span-2 py-6 bg-white text-black font-black text-xs uppercase tracking-[0.4em] rounded-[2rem] hover:bg-primary hover:text-white transition-all transform active:scale-95 shadow-2xl mt-4 btn-elite">
+                    <span id="btnText">Solicitar Auditoría 2026</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 px-6 border-t border-white/5 bg-[#010409]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-16">
+            <div class="flex flex-col items-center md:items-start space-y-6">
+                <div class="flex items-center gap-3">
+                    <img src="1.png" alt="Dmente Logo"
+                        class="h-8 w-auto grayscale opacity-40 hover:opacity-100 transition-opacity">
+                    <span class="font-black text-xl tracking-tighter opacity-40">DMENTE.</span>
+                </div>
+                <p class="text-xs text-text-dim uppercase tracking-widest leading-loose text-center md:text-left">
+                    © 2026 Dmente Digital Growth.<br>Todos los derechos reservados.
+                </p>
+            </div>
+
+            <div class="flex gap-12 text-2xl text-text-dim">
+                <a href="#" class="hover:text-primary transition-all transform hover:-translate-y-1"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-primary transition-all transform hover:-translate-y-1"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-primary transition-all transform hover:-translate-y-1"><i
+                        class="fab fa-twitter"></i></a>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-[10px] font-black text-text-dim uppercase tracking-[0.4em] mb-2 opacity-50">Built for
+                    Excellence</p>
+                <div class="flex items-center gap-3 justify-center md:justify-end">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                    <p class="text-xs text-text-main font-black">ELITE STATUS 2026</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Éxito -->
+    <div id="successModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/95 backdrop-blur-2xl px-6">
+        <div class="glass p-16 rounded-[4rem] max-w-xl text-center border-t-4 border-primary">
+            <div class="w-24 h-24 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-10">
+                <i class="fas fa-check text-5xl text-primary"></i>
+            </div>
+            <h3 class="text-4xl font-black mb-6 tracking-tighter">SISTEMAS SINCRONIZADOS.</h3>
+            <p class="text-text-dim text-lg mb-12 leading-relaxed italic">"Tu información ya está en nuestra base de
+                datos segura. Un estratega procesará tu solicitud en menos de 120 minutos."</p>
+            <button onclick="location.reload()"
+                class="w-full py-5 bg-white text-black font-black uppercase tracking-[0.3em] text-xs rounded-2xl hover:bg-primary hover:text-white transition-all">Regresar
+                al Ecosistema</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://api.whatsapp.com/send?phone=3246401103&text=Hola%20DMENTE%20Quiero%20una%20asesoria"
+        target="_blank" class="fixed bottom-10 right-10 z-[60] group">
+        <div class="relative flex items-center justify-center">
+            <div class="absolute inset-0 bg-emerald-500 blur-2xl opacity-20 group-hover:opacity-40 transition-opacity">
+            </div>
+            <div
+                class="bg-emerald-500 text-white flex items-center gap-4 px-6 py-4 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all relative">
+                <span class="text-xs font-black uppercase tracking-widest">Consultoría Online</span>
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </div>
+        </div>
+    </a>
+
+    <script>
+        // --- State Management ---
+        const glow = document.getElementById('glow');
+        const form = document.getElementById('googleForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const successModal = document.getElementById('successModal');
+
+        // Seguimiento de Mouse (Glow Effect)
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // Revelación de Elementos al Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // --- Data Visualización (Chart.js) ---
+        let growthChart;
+        const initChart = () => {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(99, 102, 241, 0.4)');
+            gradient.addColorStop(1, 'rgba(99, 102, 241, 0)');
+
+            growthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Mar', 'Jun', 'Sep', 'Dec'],
+                    datasets: [{
+                        label: 'ROI Proyección',
+                        data: [15, 42, 110, 310, 890],
+                        borderColor: '#6366f1',
+                        borderWidth: 5,
+                        pointBackgroundColor: '#6366f1',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6,
+                        pointHoverRadius: 8,
+                        fill: true,
+                        backgroundColor: gradient,
+                        tension: 0.45
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleFont: { family: 'Plus Jakarta Sans', size: 14, weight: '800' },
+                            bodyFont: { family: 'Plus Jakarta Sans', size: 12 },
+                            borderColor: 'rgba(99, 102, 241, 0.5)',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: false,
+                            callbacks: {
+                                label: (context) => ` Leads: +${context.parsed.y}%`
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { display: false, grid: { display: false } },
+                        x: {
+                            grid: { display: false },
+                            ticks: {
+                                color: '#64748b',
+                                font: { family: 'Plus Jakarta Sans', size: 10, weight: '700' },
+                                padding: 15
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+        const updateGrowthChart = (type) => {
+            const chartData = type === 'organic'
+                ? [5, 6, 7, 8, 10]
+                : [15, 120, 450, 850, 1400];
+
+            const color = type === 'organic' ? '#f87171' : '#6366f1';
+
+            growthChart.data.datasets[0].data = chartData;
+            growthChart.data.datasets[0].borderColor = color;
+            growthChart.data.datasets[0].pointBackgroundColor = color;
+            growthChart.update();
+        };
+
+        // --- Interacción de Servicios ---
+        const serviceData = {
+            landing: {
+                icon: '🚀',
+                title: 'Landing Pages Pro',
+                desc: 'Desarrollamos ecosistemas web optimizados para la conversión. Implementamos rastreo ocular, copywriting persuasivo y tiempos de carga inferiores a 800ms para maximizar el retorno de inversión.'
+            },
+            social: {
+                icon: '📱',
+                title: 'Branding & Social Growth',
+                desc: 'Transformamos perfiles en autoridades del sector. No solo publicamos; construimos narrativas que generan deseo y confianza inmediata en el 90% de la audiencia.'
+            },
+            bots: {
+                icon: '🤖',
+                title: 'IA & Automatización',
+                desc: 'Sincronizamos agentes de IA en tu ecosistema para atención 24/7. Calificación de leads en tiempo real y agendamiento automático sin intervención humana.'
+            },
+            ads: {
+                icon: '📈',
+                title: 'Scaling Ads Ecosystem',
+                desc: 'Campañas de pauta avanzada en Meta, Google y TikTok. Utilizamos algoritmos de machine learning para identificar y atacar al público con mayor probabilidad de compra.'
+            }
+        };
+
+        const updateDetail = (key) => {
+            const data = serviceData[key];
+            const detailBox = document.getElementById('serviceDetail');
+
+            // Animación de salida
+            detailBox.style.opacity = '0';
+            detailBox.style.transform = 'translateY(20px)';
+
+            setTimeout(() => {
+                document.getElementById('detailIcon').textContent = data.icon;
+                document.getElementById('detailTitle').textContent = data.title;
+                document.getElementById('detailDesc').textContent = data.desc;
+
+                detailBox.classList.remove('hidden');
+                detailBox.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                detailBox.style.opacity = '1';
+                detailBox.style.transform = 'translateY(0)';
+
+                detailBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        };
+
+        // --- Manejo de Formulario ---
+        const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdUmSYZRI8-OqpeFxvWrj712fxtvox0aUQatpk3WV3xwxu6HA/formResponse";
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            btnText.innerHTML = '<span class="spinner"></span> Procesando Datos...';
+
+            const params = new URLSearchParams();
+            params.append('entry.2005620554', document.getElementById('nombre').value);
+            params.append('entry.1045781291', document.getElementById('email').value);
+            params.append('entry.1166974658', document.getElementById('whatsapp').value);
+            params.append('entry.839337160', document.getElementById('servicio').value);
+
+            try {
+                await fetch(GOOGLE_FORM_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: params.toString()
+                });
+
+                // Animación de éxito
+                successModal.style.display = 'flex';
+                successModal.animate([
+                    { opacity: 0, backdropFilter: 'blur(0px)' },
+                    { opacity: 1, backdropFilter: 'blur(16px)' }
+                ], { duration: 800, fill: 'forwards' });
+
+                form.reset();
+            } catch (err) {
+                console.error(err);
+                alert('Hubo un error en la conexión segura. Intenta vía WhatsApp.');
+            } finally {
+                submitBtn.disabled = false;
+                btnText.innerHTML = 'Solicitar Auditoría 2026';
+            }
+        });
+
+        // Initialize on Load
+        window.addEventListener('load', () => {
+            initChart();
+        });
+    </script>
+</body>
+
+</html>
